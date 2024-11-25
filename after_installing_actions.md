@@ -3,6 +3,7 @@
 ## Update system
 
 ```bash
+sudo dnf upgrade -y
 sudo dnf update -y
 ```
 
@@ -39,12 +40,10 @@ sudo dnf install libappindicator-gtk3 gnome-shell-extension-appindicator gnome-e
 restart and enable AppIndicator and KStatusNotifierItem Support extension 
 
 
-### fastfetch
-
-https://github.com/fastfetch-cli/fastfetch/blob/dev/README.md
+### Install all of this
 
 ```bash
-sudo dnf install fastfetch
+sudo dnf5 install fastfetch mpv gcc make python3-pip unrar cargo p7zip p7zip-plugins htop java-17-openjdk android-tools vlc
 ```
 
 ### VSCode
