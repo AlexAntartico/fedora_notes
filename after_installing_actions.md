@@ -18,7 +18,7 @@ add max_parallel_downloads=10
 
 ## dnf Plugins
 
-DNF plugins add extra features to the dnf package manager. The dnf-plugins-core package provides some essential plugins
+DNF plugins add extra features to the dnf package manager. The dnf-plugins-core package provides some essential plugins.
 
 ```bash
 sudo dnf install dnf-plugins-core -y
@@ -130,7 +130,7 @@ sudo dnf install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 You will be asked if you wanto enable docker since boot which I don't want as this is for personal and not a corporate environment where you probably want it that way.
 
 ```bash
-# this will start docket
+# this will start docker
 sudo systemctl start docker
 # thiw will enable boot run
 sudo systemctl enable docker
