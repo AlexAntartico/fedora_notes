@@ -65,6 +65,23 @@ sudo dnf install libappindicator-gtk3 gnome-shell-extension-appindicator gnome-e
 
 restart and enable AppIndicator and KStatusNotifierItem Support extension 
 
+### Install IVPN
+
+The team seems pretty cool and I am in search of a faster VPN, proton is great but I have noticed some latency and I work remote so not ideal.
+
+This is for Fedora 41, for below versions go here: https://www.ivpn.net/en/apps-linux/#fedora
+
+```bash
+# [Fedora 41+] Add the IVPN repository
+sudo dnf config-manager addrepo --from-repofile=https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
+
+# To install IVPN software (CLI and UI)
+sudo dnf install ivpn-ui
+
+# To install only IVPN CLI
+sudo dnf install ivpn
+```
+
 ### Install all of this
 
 Recommended by me (づ ◕‿◕ )づ, assuming you installed rpmfusion-nonfree.
