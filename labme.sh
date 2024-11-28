@@ -18,6 +18,13 @@ source venv/bin/activate || { echo "Failed to activate venv"; exit 1; }
 # upgrade pip
 pip install --upgrade pip
 
+curl https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore > ./.gitignore
+
+git init
+git add .gitignore  # Stage .gitignore first
+git add .  # stage remaining files
+git rm -r --cached ./venv
+
 # Install the required packages
 pip install pandas jupyterlab matplotlib numpy seaborn
 
@@ -28,11 +35,10 @@ then
     pip install jupyterlab
 fi
 
-git init
-
 echo "Virtual environment '$name' created and activated."
 echo "Packages installed: pandas, jupyterlab, matplotlib, numpy seaborn"
 echo "git tracking initiated"
+echo ".gitignore python templated added"
 
 # Run jupyter lab in the background and capture url
 nohup jupyter lab &> nohup.out &
