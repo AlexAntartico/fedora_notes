@@ -155,16 +155,30 @@ sudo systemctl enable docker
 
 ### Aliases
 
-Fedora points your bashrc file to /etc/bashrc to have a cleaner config. To have your own, create a bashrc.d directory and then put whatever you want.
+Fedora points your bashrc file to /etc/bashrc to have a cleaner config. To have your own, create a bashrc.d directory and then put whatever you want. It would be more useful that you know these before aliasing
 
+These are some linux aliases I use on my day to day.
 
 ```bash
 mdkir ~/.bashrc.d
 vi ~/.bashrc.d/aliases.sh
 
-# then save and wq
-alias ll='/usr/bin/ls -lrth --color=auto'
-alias la='/usr/bin/ls -lrtha --color=auto'
+# then save and wq the below commands
+alias ll='ls -lrth --color=auto'
+alias la='ls -lrtha --color=auto'
+alias df='df -hT'
+alias d1='cd ..'
+alias d2='cd ../..'
+alias d3='cd ../../..'
+alias d4='cd ../../../..'
 ```
 
+To not use any alias and run the standard command:
 
+```bash
+\df
+
+#or
+
+command df
+```
