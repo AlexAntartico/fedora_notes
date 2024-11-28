@@ -21,3 +21,7 @@ Ask user for the name of the repo, create a venv, activate venv and activate git
 ## after_installing_actions
 
 This is a set of steps to do after installing fedora, I might save this as a big script probably later, or at least some steps.
+
+## dnf_tricks.md
+
+This are just some useful dnf commands that may not be so common or just new for me.
