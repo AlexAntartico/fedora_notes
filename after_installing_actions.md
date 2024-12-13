@@ -1,4 +1,4 @@
-# After installing Fedora
+# After installing Fedora 41
 
 ## Update system
 
