@@ -188,6 +188,7 @@ alias d1='cd ..'
 alias d2='cd ../..'
 alias d3='cd ../../..'
 alias d4='cd ../../../..'
+alias upme='sudo dnf5 upgrade -y'
 
 fastfetch
 ```
@@ -201,6 +202,11 @@ To not use any alias and run the standard command:
 
 command df
 ```
+
+- `upgrade` is the preferred term: In DNF5, upgrade is the technically correct and recommended command for updating packages.
+- `update` is an alias: update still works because it's maintained as an alias for upgrade for backward compatibility and user familiarity
+
+In older dnf and yum versions, there was a distinction between update and upgrade, where upgrade was usually reserved for version upgrades, like from Fedora 36, to 37.
 
 ## Custom DNS
 
