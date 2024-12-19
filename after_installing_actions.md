@@ -189,6 +189,7 @@ alias d2='cd ../..'
 alias d3='cd ../../..'
 alias d4='cd ../../../..'
 alias upme='sudo dnf5 upgrade -y'
+alias py_gitignore='curl https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore > ./.gitignore'
 
 fastfetch
 ```
