@@ -89,7 +89,7 @@ sudo dnf install ivpn
 Recommended by me (づ ◕‿◕ )づ, assuming you installed rpmfusion-nonfree.
 
 ```bash
-sudo dnf5 install fastfetch mpv gcc make python3-pip unrar cargo p7zip p7zip-plugins htop java-17-openjdk android-tools vlc discord
+sudo dnf5 install fastfetch mpv gcc make python3-pip unrar cargo p7zip p7zip-plugins htop java-17-openjdk android-tools vlc discord dejavu-sans-mono-fonts fira-code-fonts kdenlive neovim
 ```
 
 ### VSCode
