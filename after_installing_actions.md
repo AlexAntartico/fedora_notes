@@ -1,13 +1,21 @@
-# After installing Fedora 41
+# After installing Fedora 41: A Glorious Adventure Awaits!
+
+Welcome, brave linux enthusiasts, to the land of Fedora 41! You've just embarked on a journey where your terminal is your sword, and your bash commands are your spellbook. Here's how to make your new digital home not just functional but confortable as well.
 
 ## Update system
 
+First things first, let's ensure your Fedora fortress is up to date. Run these commands to banish the outdated demons:
+
 ```bash
 sudo dnf upgrade -y
-sudo dnf update -y
+# sudo dnf update -y
+# upgrade is now the preffered command, it has backwards compatibility
 ```
+Because nothing says "I installed a new Linux" like a good old system update.
 
 ## Configure DNF simultaneous mirrors
+
+Cast a speed spell to your dnf sources by enabling max downlows parameter.
 
 ```bash
 sudo vi /etc/dnf/dnf.conf
@@ -16,16 +24,18 @@ sudo vi /etc/dnf/dnf.conf
 add max_parallel_downloads=10
 ```
 
+Now, your downloads will race through the internet like Usain Bolt on a caffeine rush... or me when someone mentions 'production outage'.
+
 ## dnf Plugins
 
-DNF plugins add extra features to the dnf package manager. The dnf-plugins-core package provides some essential plugins.
+DNF plugins are like magical accessories for your package manager. They add extra features to the dnf package manager and provide some essential plugins. Here is how to arm yourself with them:
 
 ```bash
 sudo dnf install dnf-plugins-core -y
 ```
 - **builddep:** This plugin allows you to automatically install the build dependencies for a package. This is useful if you want to compile software from source code.
 
-- **changelog:** This plugin lets you view the changelog for a package, showing the changes made in each version.
+- **changelog:** This plugin lets you view the changelog for a package, showing the changes made in each version. Who doesn't love a transaction log?
 
 - **config-manager:** This plugin helps you manage DNF configuration options and repositories.
 
@@ -46,7 +56,7 @@ sudo dnf install dnf-plugins-core -y
 
 ### Proton Fedora VPN
 
-Guide: https://protonvpn.com/support/official-linux-vpn-fedora/
+Feeling the need for privacy? Here’s how to cloak yourself with ProtonVPN or follow the guide: https://protonvpn.com/support/official-linux-vpn-fedora/
 
 ```bash
 
@@ -63,15 +73,13 @@ sudo dnf check-update && sudo dnf upgrade
 sudo dnf install libappindicator-gtk3 gnome-shell-extension-appindicator gnome-extensions-app
 ```
 
-restart and enable AppIndicator and KStatusNotifierItem Support extension 
+Don't forgent to restart and enable AppIndicator and KStatusNotifierItem Support extension for that sweet, sweet VPN icon.
 
 ### Install IVPN
 
-The team seems pretty cool and I was in search of a faster VPN. Proton is great but I have noticed some latency that severly cramps my connection while remote working.
+If ProtonVPN feels too mainstream, or you're just looking for a faster alternative, IVPN might be your speed demon.
 
-Its pretty much anonymous, you can even pay with crypto.
-
-This is for Fedora 41, for below versions go here: https://www.ivpn.net/en/apps-linux/#fedora
+Its pretty much anonymous, pay with crypto if you're feeling cyberpunk.
 
 ```bash
 # [Fedora 41+] Add the IVPN repository
@@ -84,9 +92,11 @@ sudo dnf install ivpn-ui
 sudo dnf install ivpn
 ```
 
-### Install all of this
+This is for Fedora 41, for below versions go here: https://www.ivpn.net/en/apps-linux/#fedora
 
-Recommended by me (づ ◕‿◕ )づ, assuming you installed rpmfusion-nonfree.
+### Install all of this cool stuff
+
+Recommended by me (づ ◕‿◕ )づ, assuming you have embraced rpmfusion-nonfree.
 
 ```bash
 sudo dnf5 install fastfetch mpv gcc make python3-pip unrar cargo p7zip p7zip-plugins htop java-17-openjdk android-tools vlc discord dejavu-sans-mono-fonts fira-code-fonts kdenlive vim nodejs
@@ -94,9 +104,10 @@ sudo dnf5 install fastfetch mpv gcc make python3-pip unrar cargo p7zip p7zip-plu
 
 ### VSCode
 
-Add repo from here: https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
+Because who doesn't love an editor that thinks it's an IDE? Add repo from here: https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
 
 then:
+
 ```bash
 dnf check-update
 sudo dnf install code
@@ -104,7 +115,7 @@ sudo dnf install code
 
 ### Vim plugins
 
-To ensure you always have the latest repo:
+Make Vim as fancy as your socks. Ensure you always have the latest repo:
 
 ```bash
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -112,7 +123,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 
 This command downloads the `plug.vim` file and installs it in `~/.vim/autoload`. If the directory doesn’t exist, it will be created. To verify installation, open a new Vim session and type `:PlugVersion` to verify that Vim-Plug is installed correctly.
 
-Some of the plugins I use and consider are helpful:
+Here’s a list of plugins that will make you feel like a coding wizard:
 
 ```bash
 " Plugins
@@ -132,7 +143,9 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 ```
 
-### GitHub copilot setup:
+### Vim GitHub copilot setup:
+
+Your perfect AI buddy
 
 - `:Copilot setup` This command will prompt you to authenticate with GitHub. You'll get a code to enter on a GitHub login page that opens in your browser. Follow the instructions to authorize Copilot.
 - To accept a suggestion, press `Tab`.
@@ -157,7 +170,7 @@ endfunction
 
 ### Timeshift
 
-Similar to system restore in Windows.
+Similar to system restore in Windows. Consider it your Fedora's time machine.
 
 
 ```bash
@@ -172,7 +185,7 @@ timeshift --list
 
 ### YTMusic player (⌐■_■)
 
-Go to https://ytmdesktop.app/#download and download your rpm.
+For those who like their music with a side of Linux. Go to https://ytmdesktop.app/#download and download your rpm.
 
 ```bash
 # go to Downloads and rpm, substitute with your own version
@@ -264,6 +277,8 @@ In older dnf and yum versions, there was a distinction between update and upgrad
 
 ## Custom DNS
 
+Feel like you are on a secret scenario quest with this setup.
+
 In terminal, run `resolvectl`, you will probably be running under your ISP's DNS server and this command will show it. The most common DNS servers are Google and Cloudfare.
 
 - Cloudflare:
@@ -301,5 +316,10 @@ $ nmcli con up "Wired connection 1"
 
 ## Wallpapers
 
-https://github.com/ropapermaker/Wallpapers/blob/main/README.md
+Dress up your desktop with some fresh wallpaper from here: https://github.com/ropapermaker/Wallpapers/blob/main/README.md
+
+Because even Linux needs a good aesthetic.
+
+
+And there you have it! Your Fedora 41 setup should now be more than just functional; this is a statement. Now, go forth and conquer your Linux adventures with style and speed.
 
