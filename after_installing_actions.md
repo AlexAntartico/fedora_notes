@@ -112,6 +112,48 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 
 This command downloads the `plug.vim` file and installs it in `~/.vim/autoload`. If the directory doesn’t exist, it will be created. To verify installation, open a new Vim session and type `:PlugVersion` to verify that Vim-Plug is installed correctly.
 
+Some of the plugins I use and consider are helpful:
+
+```bash
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/vim-plug'
+" Python
+Plug 'davidhalter/jedi-vim'
+Plug 'preservim/nerdtree'
+" GH Copilot
+Plug 'github/copilot.vim'
+" markdown
+Plug 'plasticboy/vim-markdown'
+Plug 'shime/vim-livedown'
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+```
+
+### GitHub copilot setup:
+
+- `:Copilot setup` This command will prompt you to authenticate with GitHub. You'll get a code to enter on a GitHub login page that opens in your browser. Follow the instructions to authorize Copilot.
+- To accept a suggestion, press `Tab`.
+- For more information on usage, you can check the plugin's documentation with `:help copilot`.
+- If you encounter issues, check the status with `:Copilot status`
+
+```bash
+" Toggle GitHub Copilot on and off
+nnoremap <leader>cc :Copilot disable<CR>
+nnoremap <leader>ce :Copilot enable<CR>
+
+function! CopilotStatus()abort
+    return exists('*copilot#Enabled') && copilot#Enabled() ? 'enabled' : 'disabled'
+endfunction
+```
+
+- `nnoremap`: Non-recursive mapping in normal mode.
+- `<leader>cp`: This is the shortcut; <leader> is typically , by default, but you can change it in your config. So, this would be ,cc if you haven't changed your leader key.
+- `:Copilot diable/enable`: This is the command to enable/disable Copilot. 
+- `<CR>`: Simulates pressing Enter to execute the command.
+
 
 ### Timeshift
 
