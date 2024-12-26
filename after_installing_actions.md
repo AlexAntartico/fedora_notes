@@ -89,7 +89,7 @@ sudo dnf install ivpn
 Recommended by me (づ ◕‿◕ )づ, assuming you installed rpmfusion-nonfree.
 
 ```bash
-sudo dnf5 install fastfetch mpv gcc make python3-pip unrar cargo p7zip p7zip-plugins htop java-17-openjdk android-tools vlc discord dejavu-sans-mono-fonts fira-code-fonts kdenlive neovim
+sudo dnf5 install fastfetch mpv gcc make python3-pip unrar cargo p7zip p7zip-plugins htop java-17-openjdk android-tools vlc discord dejavu-sans-mono-fonts fira-code-fonts kdenlive vim
 ```
 
 ### VSCode
@@ -101,6 +101,17 @@ then:
 dnf check-update
 sudo dnf install code
 ```
+
+### Vim plugins
+
+To ensure you always have the latest repo:
+
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+This command downloads the `plug.vim` file and installs it in `~/.vim/autoload`. If the directory doesn’t exist, it will be created. To verify installation, open a new Vim session and type `:PlugVersion` to verify that Vim-Plug is installed correctly.
+
 
 ### Timeshift
 
