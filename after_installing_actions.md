@@ -52,7 +52,7 @@ sudo dnf install dnf-plugins-core -y
 - **versionlock:** This plugin allows you to lock specific packages to a particular version, preventing them from being updated.
 
 
-## Install SW 
+## Install SW
 
 ### Proton Fedora VPN
 
@@ -66,7 +66,7 @@ sudo dnf install ./protonvpn-stable-release-1.0.2-1.noarch.rpm
 
 sudo dnf check-update && sudo dnf upgrade
 
-sudo dnf install --refresh proton-vpn-gnome-desktop 
+sudo dnf install --refresh proton-vpn-gnome-desktop
 
 sudo dnf check-update && sudo dnf upgrade
 
@@ -164,7 +164,7 @@ endfunction
 
 - `nnoremap`: Non-recursive mapping in normal mode.
 - `<leader>cp`: This is the shortcut; <leader> is typically , by default, but you can change it in your config. So, this would be ,cc if you haven't changed your leader key.
-- `:Copilot diable/enable`: This is the command to enable/disable Copilot. 
+- `:Copilot diable/enable`: This is the command to enable/disable Copilot.
 - `<CR>`: Simulates pressing Enter to execute the command.
 
 
@@ -201,7 +201,10 @@ sudo dnf5 update <package_name>
 
 ### Docker
 
+**Very important**: At the moment of writing, Fedora 41 includes Podman as the default container runtime. If you want to use Docker, you need to install it manually, which is only advisable if you really need Docker. Docker will just override Podman. So **I would suggest you to actually skip this step and use Podman**. It will be cleaner if you need to use containers. I have to use it as I am completing a course that requires Docker.
+
 First update system, we will be installing community edition.
+
 
 ```bash
 # sys update
@@ -285,15 +288,15 @@ In terminal, run `resolvectl`, you will probably be running under your ISP's DNS
    - Primary DNS: 1.1.1.1
    - Secondary DNS: 1.0.0.1
 - Google Public DNS:
-   - Primary DNS: 8.8.8.8   
-   - Secondary DNS: 8.8.4.4   
+   - Primary DNS: 8.8.8.8  
+   - Secondary DNS: 8.8.4.4  
 
 ```bash
 $ nmcli connection show
 
-NAME                UUID                                  TYPE      DEVICE 
-Wired connection 1  f87e2a6c-b089-31d3-ba62-83e08188db2a  ethernet  enp9s0  
-virbr0              9ad8ea46-a589-43f7-a904-95098b18404f  bridge    virbr0 
+NAME                UUID                                  TYPE      DEVICE
+Wired connection 1  f87e2a6c-b089-31d3-ba62-83e08188db2a  ethernet  enp9s0
+virbr0              9ad8ea46-a589-43f7-a904-95098b18404f  bridge    virbr0
 
 ```
 
@@ -309,8 +312,8 @@ Explanation of the columns:
 $ nmcli con mod "Wired connection 1" ipv4.dns "1.1.1.1 1.0.0.1"
 
 # restart network connection to apply changes
-$ nmcli con down "Wired connection 1" 
-$ nmcli con up "Wired connection 1" 
+$ nmcli con down "Wired connection 1"
+$ nmcli con up "Wired connection 1"
 ```
 
 
