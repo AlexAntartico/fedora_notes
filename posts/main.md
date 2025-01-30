@@ -6,7 +6,6 @@ tags:
   - Fedora
   - Linux
   - dnf
-  - dnf5
 published: true
 ---
 
