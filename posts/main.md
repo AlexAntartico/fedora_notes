@@ -2,7 +2,7 @@
 title: "After installing Fedora 41: A Glorious Adventure Awaits!"
 description: "An article containing a list of things to do after installing Fedora 41."
 tags:
-  - Fedora 41
+  - Fedora41
   - Fedora
   - Linux
   - dnf
