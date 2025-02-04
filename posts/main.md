@@ -107,11 +107,24 @@ This is for Fedora 41, for below versions go here: https://www.ivpn.net/en/apps-
 
 ### Install all of this cool stuff
 
-Recommended by me (づ ◕‿◕ )づ, assuming you have embraced rpmfusion-nonfree.
+Recommended by yours truly (づ ◕‿◕ )づ, assuming you've already embraced the magic of rpmfusion-nonfree:
 
 ```bash
-sudo dnf5 install fastfetch mpv gcc make python3-pip unrar cargo p7zip p7zip-plugins htop java-17-openjdk android-tools vlc discord dejavu-sans-mono-fonts fira-code-fonts kdenlive vim nodejs
+sudo dnf5 install fastfetch mpv unrar p7zip p7zip-plugins htop android-tools vlc discord dejavu-sans-mono-fonts fira-code-fonts kdenlive easyeffects
 ```
+
+### Some Devtools for Your Spellbook
+
+To expand your arcane library:
+
+```bash
+sudo dnf5 install gcc make python3-pip python3-tools cargo nodejs vim java-17-openjdk gh development-tools
+```
+
+* To enhance your python spell tree, [check this guide](https://developer.fedoraproject.org/tech/languages/python/multiple-pythons.html). It's crucial if you're delving deep into Python on Fedora.
+* gh is very important when you conjure local repos and you need to reflect them in GitHub. [Check this grimoire to learn this magic.](https://cli.github.com/manual/)
+
+With these enchantments, your Fedora journey be filled with wonder and productivity!
 
 ### VSCode
 
@@ -252,9 +265,9 @@ gsettings set 'org.gnome.Ptyxis.Profile:/org/gnome/Ptyxis/Profiles/'$PTYXIS_PROF
 
 Fedora points your bashrc file to /etc/bashrc to have a cleaner config. To have your own, create a bashrc.d directory and then put whatever you want. It would be more useful that you know these before aliasing
 
-These are some linux aliases I use on my day to day.
-
-fastfetch command at the end is to run fastfetch at terminal startup.
+- These are some linux aliases I use on my day to day.
+- Upme and py_gitignore command are fast casting a full update and the standard .gitignore file aimed to python development
+- fastfetch command at the end is to run fastfetch at terminal startup.
 
 ```bash
 mdkir ~/.bashrc.d
