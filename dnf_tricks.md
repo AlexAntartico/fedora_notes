@@ -4,6 +4,24 @@ dnf stands for Dandified YUM, an improved version of the Yellowdog Updater Modif
 
 DNF offers several enhancements over YUM, including better performance, lower memory usage, and faster dependency resolution.
 
+## Basic dnf commands
+
+To install something:
+```bash
+sudo dnf install gedit
+```
+To remove something:
+```bash
+sudo dnf remove gedit
+```
+
+To purge something:
+```bash
+sudo dnf autoremove
+```
+
+You will also have the software center, note that the preferred way of installing something is via dnf
+
 ## dnf group list --hidden \<string\>
 
 - **`group`**: This subcommand within `dnf` is used to manage software groups. Groups are collections of related packages that can be installed together. For example, "Web Server" might be a group containing Apache, PHP, and MySQL.
