@@ -200,6 +200,143 @@ Packages altered:
   Replaced fashhash-libs-0:0.8.2-4.fc41.x86_64                       Dependency      @System
 ```
 
+## Searching with dnf
 
+```bash
+dnf search chromium
+```
+
+Notice this command will return: 
+
+- An exact match in name - name (exact)
+- Results where the package appears in name AND summary - name, summary
+- Results with a match in name only - name 
+- Results with a match in summary only - summary
+
+Example of outuput modified for readability.
+
+```bash
+antartico@fedora:~$ dnf search chromium
+Updating and loading repositories:
+Repositories loaded.
+
+Matched fields: name (exact)
+ chromium.x86_64: A WebKit (Blink) powered web browser that Google doesn't want you to use
+
+Matched fields: name, summary
+ browserpass-chromium.x86_64: Native component for the Chromium extension
+ chromium-qt5-ui.x86_64: Qt5 UI built from Chromium
+ chromium-qt6-ui.x86_64: Qt6 UI built from Chromium
+ fedora-chromium-config.noarch: Fedora customizations for Chromium/Chrome
+
+Matched fields: name
+ chromium-bsu.x86_64: Fast paced, arcade-style, top-scrolling space shooter
+ fedora-chromium-config-gnome.noarch: GNOME integration for Chrome
+ fedora-chromium-config-gssapi.noarch: GSSAPI support for Fedora Services
+
+Matched fields: summary
+ chromedriver.x86_64: WebDriver for Google Chrome/Chromium
+ cros-adapta.noarch: Chromium OS GTK Theme
+ python3-hstspreload.noarch: Chromium HSTS Preload list
+ ...
+``` 
+
+### Search info about package
+
+To display detaile info, such as version, architecture, size, description, dependencies etc...
+
+```bash
+dnf info <package>
+```
+
+Example searching info about chromium
+```bash
+antartico@fedora:~$ dnf info chromium
+Updating and loading repositories:
+Repositories loaded.
+Available packages
+Name           : chromium
+Epoch          : 0
+Version        : 136.0.7103.92
+Release        : 1.fc42
+Architecture   : x86_64
+Download size  : 78.8 MiB
+Installed size : 226.2 MiB
+Source         : chromium-136.0.7103.92-1.fc42.src.rpm
+Repository     : updates
+Summary        : A WebKit (Blink) powered web browser that Google doe
+               : sn't want you to use
+URL            : http://www.chromium.org/Home
+License        : BSD-3-Clause AND LGPL-2.1-or-later AND Apache-2.0 AN
+               : D IJG AND MIT AND GPL-2.0-or-later AND ISC AND OpenS
+               : SL AND (MPL-1.1 OR GPL-2.0-only OR LGPL-2.0-only)
+Description    : Chromium is an open-source web browser, powered by W
+               : ebKit (Blink).
+Vendor         : Fedora Project
+```
+
+### List packages
+
+List packages, use of wildcards allowed.
+
+```bash
+dnf list kernel*
+```
+
+Edited example of output
+```bash
+antartico@fedora:~$ dnf list kernel*
+Updating and loading repositories:
+Repositories loaded.
+Installed packages
+kernel.x86_64                        6.14.5-300.fc42 updates
+kernel-core.x86_64                   6.14.5-300.fc42 updates
+kernel-modules.x86_64                6.14.5-300.fc42 updates
+kernel-tools-libs.x86_64             6.14.5-300.fc42 updates
+
+Available packages
+kernel-cross-headers.x86_64          6.14.3-300.fc42 updates
+kernel-debug.x86_64                  6.14.5-300.fc42 updates
+kernel-debug-core.x86_64             6.14.5-300.fc42 updates
+```
+
+To list installed packages
+```bash
+dnf list --installed
+```
+
+To list user installed repositories
+```bash
+dnf repoquery --userinstalled
+```
+
+Lets suppose you see a weird filename, and you want to find out which package provides it.
+```bash
+antartico@fedora:~$ dnf provides tinysparql
+Updating and loading repositories:
+ Brave Browser               100% |  66.5 KiB/s | 157.3 KiB |  00m02s
+ Fedora 42 - x86_64 - Update 100% |   2.3 MiB/s |  18.1 MiB |  00m08s
+ google-chrome               100% |   4.6 KiB/s |   7.7 KiB |  00m02s
+ IVPN software               100% |   8.7 KiB/s |  26.6 KiB |  00m03s
+ Copr repo for PyCharm owned 100% |  28.8 KiB/s |  73.4 KiB |  00m03s
+ Fedora 42 - x86_64          100% |   2.9 MiB/s |  57.7 MiB |  00m20s
+ RPM Fusion for Fedora 42 -  100% |  62.2 KiB/s | 307.5 KiB |  00m05s
+ Visual Studio Code          100% |   1.2 MiB/s |   9.2 MiB |  00m08s
+Repositories loaded.
+tinysparql-3.11.3-1.fc42.x86_64 : Desktop-neutral metadata database and search tool
+Repo         : @System
+Matched From : 
+Provide      : tinysparql = 3.11.3-1.fc42
+
+tinysparql-3.11.3-1.fc42.x86_64 : Desktop-neutral metadata database and search tool
+Repo         : updates
+Matched From : 
+Provide      : tinysparql = 3.11.3-1.fc42
+
+tinysparql-3.11.3-2.fc42.x86_64 : Desktop-neutral metadata database and search tool
+Repo         : fedora
+Matched From : 
+Provide      : tinysparql = 3.11.3-2.fc42
+```
 
 
